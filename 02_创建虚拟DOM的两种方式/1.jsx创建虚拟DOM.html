@@ -1,0 +1,38 @@
+<!-- 
+  @Author: Your name
+  @Date:   2021-07-21 19:00:29
+  @Last Modified by:   Your name
+  @Last Modified time: 2021-07-21 20:19:50
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>1.jsx创建虚拟DOM</title>
+    </head>
+    <body>
+        <!--容器-->
+        <div id="test"></div>
+        <div id="demo"></div>
+
+        <!--引入react核心包-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!--引入react-dom，用于支持react操作DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!--引入babel，用于将jsx转为js-->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+        <script type="text/babel">
+            const h1 = (
+                <h1 id='title'>
+                    <span> Hello React!</span>
+                </h1>
+            )
+            ReactDOM.render(h1,document.getElementById('test'))
+
+            const demo = document.getElementById('demo');
+            console.log('虚拟DOM',h1);
+            console.log('真实DOM',demo);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!-- 
+  @Author: Your name
+  @Date:   2021-07-21 19:00:29
+  @Last Modified by:   Your name
+  @Last Modified time: 2021-07-21 20:48:20
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>hello_react</title>
+        <style>
+            .title{
+                background-color: orange;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--容器-->
+        <div id="test"></div>
+
+        <!--引入react核心包-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!--引入react-dom，用于支持react操作DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!--引入babel，用于将jsx转为js-->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            const myId = 'Title';
+            const myData = 'hello,react';
+
+            const h1 = (
+                <div>
+                    <h1 className='title' id={myId.toLowerCase()}>
+                        <span style={{color:'white',fontSize:'29px'}}>{myData}</span>
+                    </h1>
+                    <h1 className='title' id={myId.toUpperCase()}>
+                        <span style={{color:'white',fontSize:'29px'}}>{myData}</span>
+                    </h1>
+                    <input type='password' />
+                    <Good>123</Good>
+                </div>
+                
+            )
+            ReactDOM.render(h1,document.getElementById('test'))
+        </script>
+    </body>
+</html>
