@@ -1,0 +1,56 @@
+<!-- 
+  @Author: Your name
+  @Date:   2021-07-21 19:00:29
+  @Last Modified by:   Your name
+  @Last Modified time: 2021-07-21 19:46:11
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>react三大属性1_state</title>
+    </head>
+    <body>
+        <!--容器-->
+        <div id="test"></div>
+
+        <!--引入react核心包-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!--引入react-dom，用于支持react操作DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!--引入babel，用于将jsx转为js-->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+        <script type="text/babel">
+            class Weather extends React.Component{
+                
+                constructor(props){
+                    super(props)
+                    this.state = {
+                        isHot:true,
+                        wind:'微风'
+                    }
+                    this.changeWeather = this.changeWeather.bind(this)
+                }
+
+                changeWeather(){
+                    const isHot = this.state.isHot
+                    this.state.isHot = !isHot
+                    this.setState({
+                        isHot:!isHot
+                    })
+                    console.log(this.state.isHot)
+                }
+
+                render(){
+                    const {isHot,wind} = this.state
+                    return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}，{wind}</h1>
+                }
+
+            }
+            ReactDOM.render(<Weather/>,document.getElementById('test'))
+
+            
+        </script>
+    </body>
+</html>
