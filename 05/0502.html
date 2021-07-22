@@ -1,0 +1,36 @@
+<!-- 
+  @Author: Your name
+  @Date:   2021-07-22 17:40:27
+  @Last Modified by:   Your name
+  @Last Modified time: 2021-07-22 19:27:45
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>hello_react</title>
+    </head>
+    <body>
+        <!--容器-->
+        <div id="test"></div>
+
+        <!--引入react核心包-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!--引入react-dom，用于支持react操作DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!--引入babel，用于将jsx转为js-->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+            
+        <script type="text/babel">
+            //1.创建类式组件
+            class MyComponent extends React.Component{
+                render(){
+                    console.log('render中的this：',this);
+                    return <h2>我是类组件，适用于复杂组件</h2>
+                }
+            }
+            //2.渲染组件到页面
+            ReactDOM.render(<MyComponent/>,document.getElementById('test'))
+        </script>
+    </body>
+</html>
